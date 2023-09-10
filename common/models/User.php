@@ -25,10 +25,27 @@ use yii\web\IdentityInterface;
  */
 class User extends ActiveRecord implements IdentityInterface
 {
+    public $password, $password2;
+
     const STATUS_DELETED = 0;
-    const STATUS_INACTIVE = 9;
+    const STATUS_INACTIVE = 5;
     const STATUS_ACTIVE = 10;
 
+    const TYPE_USER = 0;
+    const TYPE_MODER = 5;
+    const TYPE_ADMIN = 10;
+
+    public static $status = [
+        self::STATUS_DELETED => 'Удален',
+        self::STATUS_INACTIVE => 'Заблокирован',
+        self::STATUS_ACTIVE => 'Активен',
+    ];
+
+    public static $type = [
+        self::TYPE_USER => 'Пользователь',
+        self::TYPE_MODER => 'Модератор',
+        self::TYPE_ADMIN => 'Администратор',
+    ];
 
     /**
      * {@inheritdoc}
@@ -54,9 +71,57 @@ class User extends ActiveRecord implements IdentityInterface
     public function rules()
     {
         return [
+            [['username', 'auth_key', 'password_hash', 'email', 'created_at', 'updated_at'], 'required'],
+            [['status', 'type', 'created_at', 'updated_at'], 'integer'],
+            [['username', 'password_hash', 'password_reset_token', 'email', 'phone', 'verification_token', 'password', 'password2', 'job_title'], 'string', 'max' => 255],
+            [['auth_key'], 'string', 'max' => 32],
+            [['comment'], 'string'],
+            [['username'], 'unique'],
+            [['email'], 'unique'],
+            [['password_reset_token'], 'unique'],
+
+            ['password2', 'compare', 'compareAttribute' => 'password', 'message' => 'Пароли не совпадают'],
+
             ['status', 'default', 'value' => self::STATUS_INACTIVE],
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_INACTIVE, self::STATUS_DELETED]],
+            ['type', 'default', 'value' => self::TYPE_USER],
+            ['type', 'in', 'range' => [self::TYPE_USER, self::TYPE_MODER, self::TYPE_ADMIN]],
         ];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function attributeLabels()
+    {
+        return [
+            'id' => 'ID',
+            'username' => 'Пользователь',
+            'name' => 'Имя',
+            'job_title' => 'Должность',
+            'comment' => 'Комментарий',
+            'auth_key' => 'Auth Key',
+            'password_hash' => 'Password Hash',
+            'password_reset_token' => 'Password Reset Token',
+            'email' => 'Email',
+            'phone' => 'Телефон',
+            'status' => 'Статус',
+            'created_at' => 'Created At',
+            'updated_at' => 'Updated At',
+            'verification_token' => 'Verification Token',
+            'password' => 'Пароль',
+            'password2' => 'Повторите пароль',
+        ];
+    }
+
+    public function getStatus()
+    {
+        return self::$status[$this->status];
+    }
+
+    public function getType()
+    {
+        return self::$type[$this->type];
     }
 
     /**

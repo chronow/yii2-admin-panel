@@ -17,23 +17,33 @@ class m130524_201442_add_table_user extends Migration
             $this->createTable($table, [
                 'id' => $this->primaryKey(),
                 'username' => $this->string()->notNull()->unique(),
+                'name' => $this->string()->defaultValue(null),
+                'job_title' => $this->string()->defaultValue(null),
                 'auth_key' => $this->string(32)->notNull(),
                 'password_hash' => $this->string()->notNull(),
                 'password_reset_token' => $this->string()->unique(),
                 'verification_token' => $this->string()->defaultValue(null),
                 'email' => $this->string()->notNull()->unique(),
+                'phone' => $this->string()->defaultValue(null),
+                'comment' => $this->text()->defaultValue(null),
                 'status' => $this->smallInteger()->notNull()->defaultValue(10),
+                'type' => $this->smallInteger()->notNull()->defaultValue(10),
                 'created_at' => $this->integer()->notNull(),
                 'updated_at' => $this->integer()->notNull(),
             ], $tableOptions);
 
             $this->insert($table, [
                 'username' => 'admin',
+                'name' => 'Евгений',
+                'job_title' => 'Web Developer',
                 'auth_key' => 'SnxgK_fjsU17Ny7DrKv681hGeiFJXv9l',
                 'password_hash' => '$2y$13$Wc0Ai6WOCHqetxjo7Rg/9ud1wM1Dcgx4rfxnVlGCEdk3a15XZX.Ke',
                 'password_reset_token' => NULL,
                 'email' => 'web_script@mail.ru',
+                'phone' => '+7 (978)-77-64-771',
+                'comment' => NULL,
                 'status' => 10,
+                'type' => 10,
                 'created_at' => time(),
                 'updated_at' => 0,
             ]);
