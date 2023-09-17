@@ -12,6 +12,16 @@ return [
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
     'modules' => [],
+    'as access' => [
+        'class' => \yii\filters\AccessControl::class,
+        'except' => ['site/login'],
+        'rules' => [
+            [
+                'allow' => true,
+                'roles' => ['@']
+            ]
+        ]
+    ],
     'components' => [
         'request' => [
             'baseUrl'=>'/backend',

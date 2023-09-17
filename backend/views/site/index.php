@@ -21,7 +21,7 @@ $this->title = 'Главная';
                 </div>
             </div>
             <div class="card-body">
-                Добро пожаловать <strong><?= Yii::$app->user->identity->username ?></strong> !
+                Добро пожаловать <strong><?= Yii::$app->user->identity->username ?? '' ?></strong> !
             </div>
         </div>
     </div>

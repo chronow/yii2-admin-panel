@@ -106,6 +106,7 @@ class User extends ActiveRecord implements IdentityInterface
             'email' => 'Email',
             'phone' => 'Телефон',
             'status' => 'Статус',
+            'type' => 'Тип учётки',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
             'verification_token' => 'Verification Token',

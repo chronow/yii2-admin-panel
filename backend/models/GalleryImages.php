@@ -73,7 +73,7 @@ class GalleryImages extends \yii\db\ActiveRecord
             'id_model' => 'Id записи',
             'marker' => 'Маркер (контроллер)',
             'title' => 'Подпись изображения',
-            'description' => 'Описание',
+            'description' => 'Описание (необяз.)',
             'original' => 'Путь к оригиналу',
             'resize1' => 'Путь к обрезке',
             'resize2' => 'Путь к обрезке',

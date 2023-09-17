@@ -19,7 +19,9 @@ $boolResize3 = GalleryImages::getFileEx($model['resize3'] ?? null);
 $card = ($model->isNewRecord) ? 'card-primary' : 'card-warning';
 $btn = ($model->isNewRecord) ? 'btn-primary' : 'btn-warning';
 ?>
+
 <?php $form = ActiveForm::begin(); ?>
+
 <div class="gallery-images-update">
     <div class="row">
         <div class="col-md-7">
@@ -28,8 +30,8 @@ $btn = ($model->isNewRecord) ? 'btn-primary' : 'btn-warning';
                     <div class="card-header with-border">
                         <h3 class="card-title float-left float-start mt-1">
                             Оригинал
-                            <small class="ps-4 text-muted"><i class="bi bi-arrows-angle-expand"></i> <?= GalleryImages::getImageSize($model['original']) ?></small>
-                            <small class="ps-4 text-muted"><span class="bi bi-box"></span> <?= GalleryImages::getFileSize($model['original']) ?></small>
+                            <small class="ps-4 text-secondary"><i class="bi bi-arrows-angle-expand"></i> <?= GalleryImages::getImageSize($model['original']) ?></small>
+                            <small class="ps-4 text-secondary"><span class="bi bi-box"></span> <?= GalleryImages::getFileSize($model['original']) ?></small>
                         </h3>
                         <?= Html::a('<span class="bi bi-repeat me-2"></span> Обжим', ['resize', 'id' => $model->id, 'type' => 'original'], ['class' => 'btn btn-sm btn-warning pr-2 float-end']) ?>
                     </div>
@@ -102,8 +104,8 @@ $btn = ($model->isNewRecord) ? 'btn-primary' : 'btn-warning';
                     <div class="card-header with-border">
                         <h3 class="card-title pt-2">
                             Размер 1
-                            <small class="ps-4 text-muted"><i class="bi bi-arrows-angle-expand"></i> <?= GalleryImages::getImageSize($model['resize1']) ?></small>
-                            <small class="ps-4 text-muted"><span class="bi bi-box"></span> <?= GalleryImages::getFileSize($model['resize1']) ?></small>
+                            <small class="ps-4 text-secondary"><i class="bi bi-arrows-angle-expand"></i> <?= GalleryImages::getImageSize($model['resize1']) ?></small>
+                            <small class="ps-4 text-secondary"><span class="bi bi-box"></span> <?= GalleryImages::getFileSize($model['resize1']) ?></small>
                         </h3>
                     </div>
                     <div class="card-body text-center">
@@ -119,8 +121,8 @@ $btn = ($model->isNewRecord) ? 'btn-primary' : 'btn-warning';
                     <div class="card-header with-border">
                         <h3 class="card-title pt-2">
                             Размер 2
-                            <small class="ps-4 text-muted"><i class="bi bi-arrows-angle-expand"></i> <?= GalleryImages::getImageSize($model['resize2']) ?></small>
-                            <small class="ps-4 text-muted"><span class="bi bi-box"></span> <?= GalleryImages::getFileSize($model['resize2']) ?></small>
+                            <small class="ps-4 text-secondary"><i class="bi bi-arrows-angle-expand"></i> <?= GalleryImages::getImageSize($model['resize2']) ?></small>
+                            <small class="ps-4 text-secondary"><span class="bi bi-box"></span> <?= GalleryImages::getFileSize($model['resize2']) ?></small>
                         </h3>
                     </div>
                     <div class="card-body text-center">
@@ -136,8 +138,8 @@ $btn = ($model->isNewRecord) ? 'btn-primary' : 'btn-warning';
                     <div class="card-header with-border">
                         <h3 class="card-title pt-2">
                             Размер 3
-                            <small class="ps-4 text-muted"><i class="bi bi-arrows-angle-expand"></i> <?= GalleryImages::getImageSize($model['resize3']) ?></small>
-                            <small class="ps-4 text-muted"><span class="bi bi-box"></span> <?= GalleryImages::getFileSize($model['resize3']) ?></small>
+                            <small class="ps-4 text-secondary"><i class="bi bi-arrows-angle-expand"></i> <?= GalleryImages::getImageSize($model['resize3']) ?></small>
+                            <small class="ps-4 text-secondary"><span class="bi bi-box"></span> <?= GalleryImages::getFileSize($model['resize3']) ?></small>
                         </h3>
                     </div>
                     <div class="card-body text-center">

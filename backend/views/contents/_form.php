@@ -47,10 +47,10 @@ $btn = ($model->isNewRecord) ? 'btn-primary' : 'btn-warning';
             </div>
         </div>
 
-        <div class="info-box bg-warning mt-3 mb-3 fs-7" role="alert">
+        <div class="info-box text-black bg-warning mt-3 mb-3 fs-7" role="alert">
             <div class="info-box-icon"><i class="fa fa-exclamation"></i></div>
             <div class="info-box-content">
-                <span>Важно! Перед загрузкой заранее обрабатывайте и приводите их к нужному виду (размер, вес)</span>
+                <span class="">Важно! Перед загрузкой заранее обрабатывайте и приводите их к нужному виду (размер, вес)</span>
             </div>
         </div>
 

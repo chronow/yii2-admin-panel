@@ -50,7 +50,7 @@ $group = '';
                                 <?$group = $model->group?>
                                 <?php endif; ?>
                                 <tr>
-                                    <td class="pt-2"><span class="text-muted font12"><?= $model->key ?></span></td>
+                                    <td class="pt-2"><span class="text-secondary font12"><?= $model->key ?></span></td>
                                     <td>
                                         <?php if ($model->type == 'boolean'): ?>
                                             <?= $form->field($model, 'value[' . $k . ']', [

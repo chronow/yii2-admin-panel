@@ -69,7 +69,7 @@ use yii\helpers\Html;
 
             <li class="nav-item dropdown user-menu">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                    <i class="bi bi-person-circle"></i> <span class="d-none d-md-inline ps-1"><?= Yii::$app->user->identity->username ?></span>
+                    <i class="bi bi-person-circle"></i> <span class="d-none d-md-inline ps-1"><?= Yii::$app->user->identity->username ?? '' ?></span>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
                     <li class="user-header text-bg-primary">
@@ -77,11 +77,11 @@ use yii\helpers\Html;
                             <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
                             <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
                         </svg>
-                        <p><?= Yii::$app->user->identity->name ?><small><?= Yii::$app->user->identity->job_title ?></small></p>
+                        <p><?= Yii::$app->user->identity->name ?? '' ?><small><?= Yii::$app->user->identity->job_title ?? '' ?></small></p>
                     </li>
                     <li class="user-footer">
-                        <?= Html::a('Профиль', ['/users/update', 'id' => Yii::$app->user->identity->id], ['class' => 'btn btn-default btn-flat']) ?>
-                        <?= Html::a('Выход', ['/site/logout'], ['class' => 'btn btn-default btn-flat float-end', 'data-method' => 'post']) ?>
+                        <?= Html::a('Профиль', ['/user/update', 'id' => Yii::$app->user->identity->id ?? null], ['class' => 'btn btn-default btn-flat']) ?>
+                        <?= Html::a('Выход', ['/site/logout'], ['class' => 'btn btn-default btn-flat float-end', 'data' => ['method' => 'POST', 'confirm' => 'Вы точно хотите выйти?']]) ?>
                     </li>
                 </ul>
             </li>

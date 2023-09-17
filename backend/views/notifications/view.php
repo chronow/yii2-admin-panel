@@ -20,37 +20,37 @@ $this->params['breadcrumbs'][] = 'Просмотр #' . $model->id;
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-6">
-                        <small class="text-muted">Статус:</small>
+                        <small class="text-secondary">Статус:</small>
                         <h4 class="mt-0"><?= $model->getStatus($model->status); ?></h4>
                     </div>
                 </div>
 
                 <div class="row pt-2">
                     <div class="col-md-6">
-                        <small class="text-muted">Фио:</small>
+                        <small class="text-secondary">Фио:</small>
                         <h4 class="mt-0"><?= $model->fio; ?></h4>
                     </div>
                     <div class="col-md-6">
-                        <small class="text-muted">Дата:</small>
+                        <small class="text-secondary">Дата:</small>
                         <h5 class="mt-0"><?= Yii::$app->formatter->asDatetime($model->created_at); ?></h5>
                     </div>
                 </div>
 
                 <div class="row pt-2">
                     <div class="col-md-6">
-                        <small class="text-muted">Email:</small>
+                        <small class="text-secondary">Email:</small>
                         <h5 class="mt-0"><?= !empty($model->email) ? $model->email : 'не указан'; ?></h5>
                     </div>
 
                     <div class="col-md-6">
-                        <small class="text-muted">Телефон:</small>
+                        <small class="text-secondary">Телефон:</small>
                         <h5 class="mt-0"><?= !empty($model->phone) ? $model->phone : 'не указан'; ?></h5>
                     </div>
                 </div>
 
                 <div class="row pt-2 pb-4">
                     <div class="col-md-12">
-                        <small class="text-muted">Сообщение:</small>
+                        <small class="text-secondary">Сообщение:</small>
                         <h5 class="mt-0"><?= !empty($model->text) ? $model->text : 'не указано'; ?></h5>
                     </div>
                 </div>
