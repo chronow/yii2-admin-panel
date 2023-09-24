@@ -1,0 +1,18 @@
+
+.bg-image-vertical {position: relative; overflow: hidden; background-repeat: no-repeat; background-position: right center; background-size: auto 100%}
+.has-error .help-block{color: #ff0000; float: right; font-size: 13px}
+.control-label{float: left}
+@media (min-width: 1025px) {
+    .h-custom-2 {height: 100%}
+}
+
+body.friendly{
+    linear-gradient(135deg, #8363a1 0%, #74a8c3 100%);
+
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

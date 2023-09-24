@@ -7,18 +7,16 @@ use yii\web\AssetBundle;
 /**
  * Main backend application asset bundle.
  */
-class AppAsset extends AssetBundle
+class AuthAsset extends AssetBundle
 {
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'css/site.css',
+        'css/auth.css',
     ];
-    public $js = [
-        'js/common.js',
-    ];
+    public $js = [];
     public $depends = [
         'yii\web\YiiAsset',
-        //'yii\bootstrap5\BootstrapAsset',
+        'yii\bootstrap5\BootstrapAsset',
     ];
 }

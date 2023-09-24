@@ -1,32 +1,46 @@
 <?php
 
-/** @var yii\web\View $this */
-/** @var yii\bootstrap5\ActiveForm $form */
-/** @var \common\models\LoginForm $model */
+/* @var $this yii\web\View */
+/* @var $form yii\bootstrap\ActiveForm */
 
-use yii\bootstrap5\ActiveForm;
-use yii\bootstrap5\Html;
+/* @var $model \common\models\LoginForm */
 
-$this->title = 'Login';
+use yii\widgets\ActiveForm;
+
+$this->title = Yii::t('app', 'Вход');
 ?>
-<div class="site-login">
-    <div class="mt-5 offset-lg-3 col-lg-6">
-        <h1><?= Html::encode($this->title) ?></h1>
 
-        <p>Please fill out the following fields to login:</p>
+<section class="vh-100">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6 text-black">
+                <div class="row h-100 vh-100 justify-content-center align-items-center">
+                    <?php $form = ActiveForm::begin(['id' => 'login-form', 'options' => ['style' => 'width: 23rem; margin: 0 auto']]); ?>
+                        <h3 class="fw-normal pb-2" style="letter-spacing: 1px;"><img src="/backend/web/img/yii3.svg" width="55px" alt=""> Авторизация</h3>
 
-        <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
+                        <div class="form-outline mb-3">
+                            <?= $form->field($model, 'username', [
+                                'template' => "{label}{error}\n{input}\n{hint}"
+                            ])->textInput(['autofocus' => true, 'class' => 'form-control form-control-lg']) ?>
+                        </div>
 
-            <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
+                        <div class="form-outline mb-3">
+                            <?= $form->field($model, 'password', [
+                                'template' => "{label}{error}\n{input}\n{hint}"
+                            ])->passwordInput(['class' => 'form-control form-control-lg']) ?>
+                        </div>
 
-            <?= $form->field($model, 'password')->passwordInput() ?>
-
-            <?= $form->field($model, 'rememberMe')->checkbox() ?>
-
-            <div class="form-group">
-                <?= Html::submitButton('Login', ['class' => 'btn btn-primary btn-block', 'name' => 'login-button']) ?>
+                        <div class="pt-1 mb-3">
+                            <?= \yii\helpers\Html::submitButton('Авторизация', ['class' => 'btn btn-danger']) ?>
+                            <?php //= Html::a(Yii::t('app', 'Забыли пароль?'), ['request-password-reset'], ['class' => 'ml-1',]) ?>
+                        </div>
+                    <?php ActiveForm::end(); ?>
+                </div>
             </div>
-
-        <?php ActiveForm::end(); ?>
+            <div class="col-sm-6 px-0 d-none d-sm-block">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img3.webp"
+                     alt="Login image" class="w-100 vh-100 bg-image-vertical" style="object-fit: cover; object-position: left;">
+            </div>
+        </div>
     </div>
-</div>
+</section>
