@@ -19,8 +19,8 @@ use yii\helpers\Html;
                 <?= Html::a('<i class="bi bi-envelope me-1"></i> Уведомления ' . $countNotificationsHtml, ['notifications/index'], ['class' => 'nav-link']) ?>
             </li>
             <li class="nav-item d-none d-md-block dropdown">
-                <a class="nav-link" data-bs-toggle="dropdown" href="#">
-                    <i class="bi bi-gear me-1"></i> Настройки <i class="bi bi-caret-down-fill fs-8"></i>
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">
+                    <i class="bi bi-gear me-1"></i> Настройки
                 </a>
                 <div class="dropdown-menu dropdown-menu-lg">
                     <?= Html::a('<i class="bi bi-gear me-1"></i> Настройки', ['config/index'], ['class' => 'dropdown-item']) ?>
@@ -30,8 +30,8 @@ use yii\helpers\Html;
                 </div>
             </li>
             <li class="nav-item d-none d-md-block dropdown">
-                <a class="nav-link" data-bs-toggle="dropdown" href="#">
-                    <i class="nav-icon bi bi-journal-text"></i> Страницы <i class="bi bi-caret-down-fill fs-8"></i>
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" data-toggle="dropdown">
+                    <i class="nav-icon bi bi-journal-text"></i> Страницы
                 </a>
                 <div class="dropdown-menu dropdown-menu-lg">
                     <?= Html::a('<i class="bi bi-journal-text me-1"></i> Страницы', ['contents/index'], ['class' => 'dropdown-item']) ?>
