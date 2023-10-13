@@ -16,3 +16,6 @@ body.friendly{
     align-items: center;
     justify-content: center;
 }
+.form-control-lg{background-color: rgba(232, 218, 200, .42); border: 1px solid #bcb1a2}
+.form-control-lg:focus{background-color: #b9b0a3bf;}
+.alert {background-color: #cbbfaf; border-color: #bcb1a2; font-size: 14px}

@@ -2,8 +2,10 @@
 
 namespace backend\controllers;
 
-use common\models\LoginForm;
 use Yii;
+use common\models\LoginForm;
+use common\models\User;
+use common\models\SignupForm;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -22,10 +24,10 @@ class SiteController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::class,
-                'only' => ['login', 'logout', 'error', 'request-password-reset', 'reset-password'],
+                'only' => ['login', 'logout', 'error', 'request-password-reset', 'reset-password', 'signup'],
                 'rules' => [
                     [
-                        'actions' => ['login', 'error'],
+                        'actions' => ['login', 'error', 'request-password-reset', 'reset-password', 'signup'],
                         'allow' => true,
                     ],
                     [
@@ -73,22 +75,24 @@ class SiteController extends Controller
      */
     public function actionLogin()
     {
-        if (!Yii::$app->user->isGuest) {
-            return $this->goHome();
-        }
-
-        $this->layout = 'login';
+        if (!Yii::$app->user->isGuest) return $this->goHome();
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
             return $this->goBack();
+        } else {
+            $this->layout = 'login';
+            $model->password = '';
+
+//            if (!$userCount = User::find()->count()) {
+//                return $this->redirect(['signup']);
+//            }
+
+
+            return $this->render('login', [
+                'model' => $model,
+            ]);
         }
-
-        $model->password = '';
-
-        return $this->render('login', [
-            'model' => $model,
-        ]);
     }
 
     /**
@@ -101,5 +105,24 @@ class SiteController extends Controller
         Yii::$app->user->logout();
 
         return $this->goHome();
+    }
+
+    /**
+     * Signs user up.
+     *
+     * @return mixed
+     */
+    public function actionSignup()
+    {
+
+        $this->layout = 'login';
+        $model = new SignupForm();
+        if ($model->load(Yii::$app->request->post()) && $model->signup()) {
+            Yii::$app->session->setFlash('success', 'Спасибо за вашу регистрацию. Дождитесь подтверждения вашей учётной записи.');
+            return $this->redirect(['login']);
+        }
+        return $this->render('signup', [
+            'model' => $model,
+        ]);
     }
 }

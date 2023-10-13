@@ -13,9 +13,6 @@ use yii\helpers\Html;
                 </a>
             </li>
             <li class="nav-item d-none d-md-block">
-                <?= Html::a('<i class="bi bi-house me-1"></i> Главная', ['site/index'], ['class' => 'nav-link']) ?>
-            </li>
-            <li class="nav-item d-none d-md-block">
                 <?= Html::a('<i class="bi bi-envelope me-1"></i> Уведомления ' . $countNotificationsHtml, ['notifications/index'], ['class' => 'nav-link']) ?>
             </li>
             <li class="nav-item d-none d-md-block dropdown">
@@ -34,6 +31,7 @@ use yii\helpers\Html;
                     <i class="nav-icon bi bi-journal-text"></i> Страницы
                 </a>
                 <div class="dropdown-menu dropdown-menu-lg">
+                    <?= Html::a('<i class="bi bi-house me-1"></i> Главная', ['site/index'], ['class' => 'dropdown-item']) ?>
                     <?= Html::a('<i class="bi bi-journal-text me-1"></i> Страницы', ['contents/index'], ['class' => 'dropdown-item']) ?>
                     <?= Html::a('<i class="bi bi-bookmarks me-1"></i> Категории', ['contents-category/index'], ['class' => 'dropdown-item']) ?>
                     <?= Html::a('<i class="bi bi-images me-1"></i> Галерея', ['gallery-images//index'], ['class' => 'dropdown-item']) ?>

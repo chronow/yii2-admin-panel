@@ -1,3 +1,19 @@
+@font-face {
+    font-family: 'Kardinal';
+    src: url('/backend/fonts/Kardinal/Kardinal-Light.eot');
+    src: local('Kardinal'), local('Kardinal-Light'),
+    url('/backend/fonts/Kardinal/Kardinal-Light.eot?#iefix') format('embedded-opentype'),
+    url('/backend/fonts/Kardinal/Kardinal-Light.woff2') format('woff2'),
+    url('/backend/fonts/Kardinal/Kardinal-Light.woff') format('woff'),
+    url('/backend/fonts/Kardinal/Kardinal-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+    font-family: 'Kardinal';
+}
+
 main > .container {
     padding: 70px 15px 20px;
 }
@@ -97,3 +113,5 @@ a.desc:after {
 .product-box:hover .product-action {opacity: 1}
 
 .sidebar-brand .brand-link{width: 142px}
+
+.nav-link .nav-badge{height:18px; margin-top: 2px}

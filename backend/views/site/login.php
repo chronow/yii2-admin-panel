@@ -14,7 +14,7 @@ $this->title = Yii::t('app', 'Вход');
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-6 text-black">
-                <div class="row h-100 vh-100 justify-content-center align-items-center">
+                <div class="row h-100 vh-100 justify-content-center align-items-center" style="background:url(/backend/img/bg-pattern.png); background-color:#faebd7; background-size: cover;">
                     <?php $form = ActiveForm::begin(['id' => 'login-form', 'options' => ['style' => 'width: 23rem; margin: 0 auto']]); ?>
                         <h3 class="fw-normal pb-2" style="letter-spacing: 1px;"><img src="/backend/web/img/yii3.svg" width="55px" alt=""> Авторизация</h3>
 
@@ -33,8 +33,14 @@ $this->title = Yii::t('app', 'Вход');
                         <div class="pt-1 mb-3">
                             <?= \yii\helpers\Html::submitButton('Авторизация', ['class' => 'btn btn-danger']) ?>
                             <?php //= Html::a(Yii::t('app', 'Забыли пароль?'), ['request-password-reset'], ['class' => 'ml-1',]) ?>
+                            <?= \yii\helpers\Html::a(Yii::t('app', 'Регистрация'), ['signup'], ['class' => 'ml-1 float-end text-danger',]) ?>
+                        </div>
+
+                        <div class="form-outline">
+                        <?= \common\widgets\Alert::widget() ?>
                         </div>
                     <?php ActiveForm::end(); ?>
+
                 </div>
             </div>
             <div class="col-sm-6 px-0 d-none d-sm-block">

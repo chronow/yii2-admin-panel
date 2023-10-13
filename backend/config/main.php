@@ -14,7 +14,7 @@ return [
     'modules' => [],
     'as access' => [
         'class' => \yii\filters\AccessControl::class,
-        'except' => ['site/login'],
+        'except' => ['site/login', 'site/signup'],
         'rules' => [
             [
                 'allow' => true,

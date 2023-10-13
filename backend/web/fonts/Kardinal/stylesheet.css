@@ -1,0 +1,192 @@
+@font-face {
+    font-family: 'Kardinal Extra';
+    src: url('Kardinal-ExtraLight.eot');
+    src: local('Kardinal Extra Light'), local('Kardinal-ExtraLight'),
+        url('Kardinal-ExtraLight.eot?#iefix') format('embedded-opentype'),
+        url('Kardinal-ExtraLight.woff2') format('woff2'),
+        url('Kardinal-ExtraLight.woff') format('woff'),
+        url('Kardinal-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Kardinal';
+    src: url('Kardinal-Light.eot');
+    src: local('Kardinal Light'), local('Kardinal-Light'),
+        url('Kardinal-Light.eot?#iefix') format('embedded-opentype'),
+        url('Kardinal-Light.woff2') format('woff2'),
+        url('Kardinal-Light.woff') format('woff'),
+        url('Kardinal-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Kardinal';
+    src: url('Kardinal-BlackItalic.eot');
+    src: local('Kardinal Black Italic'), local('Kardinal-BlackItalic'),
+        url('Kardinal-BlackItalic.eot?#iefix') format('embedded-opentype'),
+        url('Kardinal-BlackItalic.woff2') format('woff2'),
+        url('Kardinal-BlackItalic.woff') format('woff'),
+        url('Kardinal-BlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Kardinal';
+    src: url('Kardinal-BoldItalic.eot');
+    src: local('Kardinal Bold Italic'), local('Kardinal-BoldItalic'),
+        url('Kardinal-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('Kardinal-BoldItalic.woff2') format('woff2'),
+        url('Kardinal-BoldItalic.woff') format('woff'),
+        url('Kardinal-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Kardinal Extra';
+    src: url('Kardinal-ExtraBoldItalic.eot');
+    src: local('Kardinal Extra Bold Italic'), local('Kardinal-ExtraBoldItalic'),
+        url('Kardinal-ExtraBoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('Kardinal-ExtraBoldItalic.woff2') format('woff2'),
+        url('Kardinal-ExtraBoldItalic.woff') format('woff'),
+        url('Kardinal-ExtraBoldItalic.ttf') format('truetype');
+    font-weight: 800;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Kardinal Extra';
+    src: url('Kardinal-ExtraLightItalic.eot');
+    src: local('Kardinal Extra Light Italic'), local('Kardinal-ExtraLightItalic'),
+        url('Kardinal-ExtraLightItalic.eot?#iefix') format('embedded-opentype'),
+        url('Kardinal-ExtraLightItalic.woff2') format('woff2'),
+        url('Kardinal-ExtraLightItalic.woff') format('woff'),
+        url('Kardinal-ExtraLightItalic.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Kardinal';
+    src: url('Kardinal-Bold.eot');
+    src: local('Kardinal Bold'), local('Kardinal-Bold'),
+        url('Kardinal-Bold.eot?#iefix') format('embedded-opentype'),
+        url('Kardinal-Bold.woff2') format('woff2'),
+        url('Kardinal-Bold.woff') format('woff'),
+        url('Kardinal-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Kardinal';
+    src: url('Kardinal-LightItalic.eot');
+    src: local('Kardinal Light Italic'), local('Kardinal-LightItalic'),
+        url('Kardinal-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('Kardinal-LightItalic.woff2') format('woff2'),
+        url('Kardinal-LightItalic.woff') format('woff'),
+        url('Kardinal-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Kardinal';
+    src: url('Kardinal-Italic.eot');
+    src: local('Kardinal Italic'), local('Kardinal-Italic'),
+        url('Kardinal-Italic.eot?#iefix') format('embedded-opentype'),
+        url('Kardinal-Italic.woff2') format('woff2'),
+        url('Kardinal-Italic.woff') format('woff'),
+        url('Kardinal-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Kardinal';
+    src: url('Kardinal-Black.eot');
+    src: local('Kardinal Black'), local('Kardinal-Black'),
+        url('Kardinal-Black.eot?#iefix') format('embedded-opentype'),
+        url('Kardinal-Black.woff2') format('woff2'),
+        url('Kardinal-Black.woff') format('woff'),
+        url('Kardinal-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Kardinal Extra';
+    src: url('Kardinal-ExtraBold.eot');
+    src: local('Kardinal Extra Bold'), local('Kardinal-ExtraBold'),
+        url('Kardinal-ExtraBold.eot?#iefix') format('embedded-opentype'),
+        url('Kardinal-ExtraBold.woff2') format('woff2'),
+        url('Kardinal-ExtraBold.woff') format('woff'),
+        url('Kardinal-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Kardinal';
+    src: url('Kardinal-Medium.eot');
+    src: local('Kardinal Medium'), local('Kardinal-Medium'),
+        url('Kardinal-Medium.eot?#iefix') format('embedded-opentype'),
+        url('Kardinal-Medium.woff2') format('woff2'),
+        url('Kardinal-Medium.woff') format('woff'),
+        url('Kardinal-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Kardinal';
+    src: url('Kardinal-MediumItalic.eot');
+    src: local('Kardinal Medium Italic'), local('Kardinal-MediumItalic'),
+        url('Kardinal-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('Kardinal-MediumItalic.woff2') format('woff2'),
+        url('Kardinal-MediumItalic.woff') format('woff'),
+        url('Kardinal-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Kardinal';
+    src: url('Kardinal-Thin.eot');
+    src: local('Kardinal Thin'), local('Kardinal-Thin'),
+        url('Kardinal-Thin.eot?#iefix') format('embedded-opentype'),
+        url('Kardinal-Thin.woff2') format('woff2'),
+        url('Kardinal-Thin.woff') format('woff'),
+        url('Kardinal-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Kardinal';
+    src: url('Kardinal-ThinItalic.eot');
+    src: local('Kardinal Thin Italic'), local('Kardinal-ThinItalic'),
+        url('Kardinal-ThinItalic.eot?#iefix') format('embedded-opentype'),
+        url('Kardinal-ThinItalic.woff2') format('woff2'),
+        url('Kardinal-ThinItalic.woff') format('woff'),
+        url('Kardinal-ThinItalic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Kardinal';
+    src: url('Kardinal-Regular.eot');
+    src: local('Kardinal'), local('Kardinal-Regular'),
+        url('Kardinal-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Kardinal-Regular.woff2') format('woff2'),
+        url('Kardinal-Regular.woff') format('woff'),
+        url('Kardinal-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+

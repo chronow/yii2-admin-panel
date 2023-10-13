@@ -24,7 +24,7 @@ AuthAsset::register($this);
 <body class="hold-transition login-page">
 
 <?php $this->beginBody() ?>
-<?= \common\widgets\Alert::widget() ?>
+
 <?= $content ?>
 
 </body>

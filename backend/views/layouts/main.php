@@ -15,7 +15,7 @@ AppAsset::register($this);
 
 $countNotificationsHtml = null;
 if ($countNotifications = Notifications::find()->where(['status' => Notifications::STATUS_NEW])->count()) {
-    $countNotificationsHtml = '<span class="nav-badge badge text-bg-secondary mt-1" title="Не прочитанные сообщения">' . $countNotifications . '</span>';
+    $countNotificationsHtml = '<span class="nav-badge badge text-bg-warning" title="Не прочитанные сообщения">' . $countNotifications . '</span>';
 }
 ?>
 <?php $this->beginPage() ?>
@@ -48,7 +48,7 @@ if ($countNotifications = Notifications::find()->where(['status' => Notification
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-6">
-                        <h3 class="mb-0"><?= Html::encode($this->title) ?></h3>
+                        <h3 class="mb-0 mt-1"><?= Html::encode($this->title) ?></h3>
                     </div>
                     <div class="col-sm-6">
 
