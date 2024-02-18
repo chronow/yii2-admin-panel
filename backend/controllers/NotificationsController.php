@@ -2,11 +2,9 @@
 
 namespace backend\controllers;
 
-use common\models\Objects;
 use Yii;
 use common\models\Notifications;
 use backend\models\NotificationsSearch;
-use yii\helpers\ArrayHelper;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -59,7 +57,6 @@ class NotificationsController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['index', 'id' => $model->id]);
         }
-
         return $this->render('create', compact('model'));
     }
 
@@ -76,7 +73,6 @@ class NotificationsController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['index', 'id' => $model->id]);
         }
-
         return $this->render('update', compact('model'));
     }
 

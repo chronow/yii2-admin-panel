@@ -38,7 +38,7 @@ $group = '';
                     <div class="tab-pane fade <?= $key == $tab ? 'show active' : '' ?>" id="key-<?= $key ?>" role="tabpanel">
                         <?php if (!empty($config[$key])): ?>
                         <?php $form = ActiveForm::begin(['options' => ['class' => 'form-horizontal']]); ?>
-                        <table class="table table-sm mb-0">
+                        <table class="table table-sm mb-0 align-middle">
                             <?php foreach ($config[$key] as $k => $model): ?>
                                 <?php if ($group != $model->group && $model->group != ''): ?>
                                 <tr>

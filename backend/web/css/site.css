@@ -115,3 +115,10 @@ a.desc:after {
 .sidebar-brand .brand-link{width: 142px}
 
 .nav-link .nav-badge{height:18px; margin-top: 2px}
+
+.justify-flex{width: 100%; display: flex; justify-content: space-between}
+
+/** square product card **/
+.my-product {float: left;width: 100%;position: relative;padding: 0;overflow: hidden;transition: all .5s ease-out;box-shadow: 0 5px 14px rgba(0,0,0,.25)}
+.my-product .my-image {float: left;position: relative;max-width: 100%;text-align: center;overflow: hidden;width: 100%;background-position: center;background-size: cover;margin: auto}
+.my-product .my-image:before {content: "";padding-top: 100%;float: left}

@@ -1,6 +1,6 @@
 
 .bg-image-vertical {position: relative; overflow: hidden; background-repeat: no-repeat; background-position: right center; background-size: auto 100%}
-.has-error .help-block{color: #ff0000; float: right; font-size: 13px}
+.has-error .help-block{color: #b90000; float: right; font-size: 13px}
 .control-label{float: left}
 @media (min-width: 1025px) {
     .h-custom-2 {height: 100%}
@@ -16,6 +16,8 @@ body.friendly{
     align-items: center;
     justify-content: center;
 }
-.form-control-lg{background-color: rgba(232, 218, 200, .42); border: 1px solid #bcb1a2}
-.form-control-lg:focus{background-color: #b9b0a3bf;}
+.form-control{background-color: rgba(232, 218, 200, .42); border: 1px solid #bcb1a2}
+.form-control:focus{background-color: #b9b0a3bf;}
 .alert {background-color: #cbbfaf; border-color: #bcb1a2; font-size: 14px}
+
+.form-floating > .form-control:focus ~ label::after, .form-floating > .form-control:not(:placeholder-shown) ~ label::after, .form-floating > .form-control-plaintext ~ label::after, .form-floating > .form-select ~ label::after{background-color: #a6a09a !important}

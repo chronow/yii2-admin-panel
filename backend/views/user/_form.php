@@ -33,6 +33,16 @@ $btn = ($model->isNewRecord) ? 'btn-primary' : 'btn-warning';
                         </div>
 
                         <div class="col-lg-4 col-md-6 g-3">
+                            <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 g-3">
+                            <?= $form->field($model, 'status')->dropDownList($model::$status, ['class' => 'form-control form-select']) ?>
+                        </div>
+
+                        <div class="clearfix"></div>
+
+                        <div class="col-lg-4 col-md-6 g-3">
                         <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
                         </div>
 
@@ -40,9 +50,7 @@ $btn = ($model->isNewRecord) ? 'btn-primary' : 'btn-warning';
                         <?= $form->field($model, 'phone')->textInput(['maxlength' => true]) ?>
                         </div>
 
-                        <div class="col-lg-4 col-md-6 g-3">
-                        <?= $form->field($model, 'status')->dropDownList($model::$status, ['class' => 'form-control form-select']) ?>
-                        </div>
+                        <div class="clearfix"></div>
 
                         <div class="col-lg-8 col-md-6 g-3">
                             <?= $form->field($model, 'job_title')->textInput() ?>
@@ -51,6 +59,8 @@ $btn = ($model->isNewRecord) ? 'btn-primary' : 'btn-warning';
                         <div class="col-lg-4 col-md-4 g-3">
                             <?= $form->field($model, 'type')->dropDownList($model::$type, ['class' => 'form-control form-select']) ?>
                         </div>
+
+                        <div class="clearfix"></div>
 
                         <div class="col-lg-4 col-md-4 g-3">
                             <?= $form->field($model, 'password')->textInput() ?>

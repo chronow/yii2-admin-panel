@@ -30,5 +30,17 @@ if (!empty(Yii::$app->request->get('GalleryImagesSearch')['id_model'])) {
         'class' => 'row',
         'id' => 'list-wrapper',
     ],
-    'layout' => '{items}',
+    //'layout' => "{items}\n{pager}",
+    'pager' => [
+        'options' => [
+            'class' => 'pagination',
+        ],
+        'maxButtonCount' => 15,
+        'pageCssClass' => 'page-item p-1',
+        'activePageCssClass' => 'active',
+        'disabledPageCssClass' => 'disabled',
+        'firstPageCssClass' => 'first',
+        'prevPageCssClass' => 'p-1',
+        'nextPageCssClass' => 'p-1',
+    ],
 ]); ?>

@@ -6,8 +6,14 @@ use backend\models\GalleryImages;
 
 $title = Html::encode($model->title);
 
-$img = (!empty($model->resize3)) ? $model->resize3 : '@web/web/img/no.png' ;
-$img = Html::img($img, ['style' => 'max-width:100%', 'loading' => 'lazy', 'class' => 'img-fluid']);
+if (!empty($model->resize3)) {
+    $url = $model->resize3;
+} elseif (!empty($model->original)) {
+    $url = $model->original;
+} else {
+    $url = '@web/web/img/no.png';
+}
+//$img = Html::img($url, ['style' => 'max-width:100%', 'loading' => 'lazy', 'class' => 'img-fluid']);
 ?>
 
 <div class="col-md-4 col-xl-3">
@@ -18,7 +24,9 @@ $img = Html::img($img, ['style' => 'max-width:100%', 'loading' => 'lazy', 'class
                     <?= Html::a('<i class="bi bi-pencil"></i>', ['update', 'id' => $model->id], ['title' => 'Редактировать', 'target' => '_blank', 'class' => 'btn btn-success btn-sm waves-effect waves-light']); ?>
                     <?= Html::a('<i class="bi bi-x-lg"></i>', ['delete', 'id' => $model->id], ['title' => 'Удалить', 'class' => 'btn btn-danger btn-sm waves-effect waves-light', 'data-method' => 'post', 'onclick' => "return window.confirm('Вы точно хотите Удалить?');"]); ?>
                 </div>
-                <?= Html::a($img, ['update', 'id' => $model->id], ['title' => $title, 'class' => 'card-img', 'loading' => 'lazy']); ?>
+                <div class="my-product">
+                <?= Html::a('', ['update', 'id' => $model->id], ['class' => 'my-image card-img', 'title' => $title, 'loading' => 'lazy', 'style' => 'background-image:url(' . $url . ')']); ?>
+                </div>
             </div>
             <div class="product-info">
                 <div class="row align-items-center">

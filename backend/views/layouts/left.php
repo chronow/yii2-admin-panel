@@ -5,8 +5,8 @@ use yii\helpers\Html;
 
 <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
     <div class="sidebar-brand">
-        <a href="/" class="brand-link">
-            <?= Html::img(Yii::getAlias('@web') . '/web/img/yii3_sign.svg', ['class' => 'brand-image shadow'])?>
+        <a href="/backend/" class="brand-link">
+            <i class="bi bi-gear me-1 text-warning"></i>
             <span class="brand-text fw-light">Управление</span>
         </a>
     </div>
@@ -29,11 +29,7 @@ use yii\helpers\Html;
                     <?= Html::a('<i class="nav-icon bi bi-images"></i><p>Галерея</p>', ['gallery-images/index'], ['class' => 'nav-link ' . ((Yii::$app->controller->id == 'gallery-images') ? 'active' : '')]) ?>
                 </li>
                 <li class="nav-item">
-                    <?= Html::a('<i class="nav-icon bi bi-envelope"></i><p>Уведомления ' . $countNotificationsHtml . '</p>', ['notifications/index'], ['class' => 'nav-link ' . ((Yii::$app->controller->id == 'notifications') ? 'active' : '')]) ?>
-                </li>
-
-                <li class="nav-item">
-                    <?= Html::a('<i class="nav-icon bi bi-people"></i> <p>Пользователи</p>', ['user/index'], ['class' => 'nav-link ' . ((Yii::$app->controller->id == 'user') ? 'active' : '')]) ?>
+                    <?= Html::a('<i class="nav-icon bi bi-envelope"></i><p>Уведомления ' . ($countNotificationsHtml ?? '') . '</p>', ['notifications/index'], ['class' => 'nav-link ' . ((Yii::$app->controller->id == 'notifications') ? 'active' : '')]) ?>
                 </li>
                 <li class="nav-item">
                     <?= Html::a('<i class="nav-icon bi bi-gear"></i> <p>Настройки</p>', ['config/index'], ['class' => 'nav-link ' . ((Yii::$app->controller->id == 'config') ? 'active' : '')]) ?>

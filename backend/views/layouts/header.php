@@ -13,19 +13,9 @@ use yii\helpers\Html;
                 </a>
             </li>
             <li class="nav-item d-none d-md-block">
-                <?= Html::a('<i class="bi bi-envelope me-1"></i> Уведомления ' . $countNotificationsHtml, ['notifications/index'], ['class' => 'nav-link']) ?>
+                <?= Html::a('<i class="bi bi-envelope me-1"></i><span class="ps-1 pe-2">Уведомления</span>' . $countNotificationsHtml, ['notifications/index'], ['class' => 'nav-link']) ?>
             </li>
-            <li class="nav-item d-none d-md-block dropdown">
-                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">
-                    <i class="bi bi-gear me-1"></i> Настройки
-                </a>
-                <div class="dropdown-menu dropdown-menu-lg">
-                    <?= Html::a('<i class="bi bi-gear me-1"></i> Настройки', ['config/index'], ['class' => 'dropdown-item']) ?>
-                    <?= Html::a('<i class="bi bi-people me-1"></i> Пользователи', ['user/index'], ['class' => 'dropdown-item']) ?>
-                    <div class="dropdown-divider"></div>
-                    <?= Html::a('<i class="bi bi-plus me-1"></i> Добавить пользователя', ['user/create'], ['class' => 'dropdown-item text-muted']) ?>
-                </div>
-            </li>
+
             <li class="nav-item d-none d-md-block dropdown">
                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" data-toggle="dropdown">
                     <i class="nav-icon bi bi-journal-text"></i> Страницы
@@ -38,6 +28,17 @@ use yii\helpers\Html;
                     <div class="dropdown-divider"></div>
                     <?= Html::a('<i class="bi bi-plus me-1"></i> Добавить страницу', ['contents/create'], ['class' => 'dropdown-item text-muted']) ?>
                     <?= Html::a('<i class="bi bi-plus me-1"></i> Добавить категорию', ['contents-category/create'], ['class' => 'dropdown-item text-muted']) ?>
+                </div>
+            </li>
+            <li class="nav-item d-none d-md-block dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">
+                    <i class="bi bi-gear me-1"></i> Настройки
+                </a>
+                <div class="dropdown-menu dropdown-menu-lg">
+                    <?= Html::a('<i class="bi bi-gear me-1"></i> Настройки', ['config/index'], ['class' => 'dropdown-item']) ?>
+                    <?= Html::a('<i class="bi bi-people me-1"></i> Пользователи', ['user/index'], ['class' => 'dropdown-item']) ?>
+                    <div class="dropdown-divider"></div>
+                    <?= Html::a('<i class="bi bi-plus me-1"></i> Добавить пользователя', ['user/create'], ['class' => 'dropdown-item text-muted']) ?>
                 </div>
             </li>
         </ul>

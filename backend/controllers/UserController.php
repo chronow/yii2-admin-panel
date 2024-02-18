@@ -55,15 +55,24 @@ class UserController extends Controller
         $model = new User();
 
         if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
-                Yii::$app->session->setFlash('success', 'Запись добавлена');
-                return $this->redirect(['update', 'id' => $model->id]);
+            if ($model->load($this->request->post())) {
+                if ($model->save()) {
+                    Yii::$app->session->setFlash('success', 'Запись добавлена');
+                    return $this->redirect(['update', 'id' => $model->id]);
+                } elseif ($model->getErrors()) {
+                    $mess = '';
+                    foreach ($model->getErrors() as $key => $value) {
+                        $mess .= '<code>' . $key . '</code>: '.$value[0] . '<br>';
+                    }
+                    $error = \yii\helpers\StringHelper::truncate(str_replace(['"', "'"], " ", $mess), 255, '...');
+                    Yii::$app->session->setFlash('error', $error);
+                }
             }
         } else {
             $model->loadDefaultValues();
         }
 
-        return $this->render('update', compact('model'));
+        return $this->render('create', compact('model'));
     }
 
     /**

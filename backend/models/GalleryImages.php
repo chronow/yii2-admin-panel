@@ -58,7 +58,7 @@ class GalleryImages extends \yii\db\ActiveRecord
             [['marker', 'title', 'original', 'resize1', 'resize2', 'resize3'], 'default', 'value' => null],
             [['id_model', 'order_image', 'type'], 'integer'],
             [['id_model', 'order_image', 'type'], 'default', 'value' => 0],
-            [['imageFiles'], 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg, jpeg', 'maxFiles' => 100, 'checkExtensionByMimeType' => false]
+            [['imageFiles'], 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg, jpeg', 'maxFiles' => 20, 'checkExtensionByMimeType' => false]
         ];
     }
 
@@ -128,9 +128,9 @@ class GalleryImages extends \yii\db\ActiveRecord
             Yii::$app->session->setFlash('danger', 'Файла не существует<br/>' . $model->original);
             return false;
         }
-        $model->resize1 = self::getThumbnail($model, ['width' => 600, 'height' => 600, 'type' => 'thumbnail']);
-        $model->resize2 = self::getThumbnail($model, ['width' => 500, 'height' => 500, 'type' => 'thumbnail']);
-        $model->resize3 = self::getThumbnail($model, ['width' => 360, 'height' => 360, 'type' => 'thumbnail']);
+        $model->resize1 = self::getThumbnail($model, ['width' => 400, 'height' => 400, 'type' => 'thumbnail']);
+//        $model->resize2 = self::getThumbnail($model, ['width' => 500, 'height' => 500, 'type' => 'thumbnail']);
+//        $model->resize3 = self::getThumbnail($model, ['width' => 360, 'height' => 360, 'type' => 'thumbnail']);
 
         $model->save();
         //$model->getChoiceMain($model->id);
@@ -487,39 +487,44 @@ class GalleryImages extends \yii\db\ActiveRecord
      * @param int $id
      * @return array|false
      */
-    public function getUploadUrl($id = 0)
+    public function getUploadUrl($id = 0, $isShort = false)
     {
         if ($this->imageFiles) {
             $folder = static::$folder;
             $mainFolder = static::$mainFolder;
-            foreach ($this->imageFiles as $key => $file) {
 
-                $curl = curl_init();
-                curl_setopt($curl, CURLOPT_URL, $file);
-                curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, 2);
-                curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-                $response = curl_exec($curl);
-                curl_close($curl);
+            $file = $this->imageFiles;
 
-                if (strlen($response) < 300) continue;
+            $curl = curl_init();
+            curl_setopt($curl, CURLOPT_URL, $file);
+            curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, 2);
+            curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+            $response = curl_exec($curl);
+            curl_close($curl);
 
-                $extension = pathinfo($file, PATHINFO_EXTENSION);
+            //if (strlen($response) < 300) continue;
 
-                if ($id == 0) {
-                    $img = "/{$mainFolder}/" . uniqid() . rand(0, 1000) . '.' . $extension;
-                } else {
+            $extension = pathinfo($file, PATHINFO_EXTENSION);
+
+            if ($id == 0) {
+                $img = "/{$mainFolder}/" . uniqid() . rand(0, 1000) . '.' . $extension;
+            } else {
+                if (empty($isShort)) {
                     $dir = "{$this->dirRoot}/{$mainFolder}/{$folder}/{$this->nameController}/{$id}/original/";
-                    if (!is_dir($dir) && mkdir($dir, self::$fileAttributes, true) && !is_dir($dir)) {
-                        throw new \RuntimeException(sprintf('Directory "%s" was not created', $dir));
-                    };
-
                     $img = "/{$mainFolder}/{$folder}/{$this->nameController}/{$id}/original/" . uniqid() . rand(0, 1000) . '.' . $extension;
+                } else {
+                    $dir = "{$this->dirRoot}/{$mainFolder}/{$this->nameController}/{$id}/";
+                    $img = "/{$mainFolder}/{$this->nameController}/{$id}/" . uniqid() . '.' . $extension;
                 }
-                $path = $this->dirRoot . $img;
 
-                file_put_contents($path, $response);
-                $mas[] = $img;
+                if (!is_dir($dir) && mkdir($dir, self::$fileAttributes, true) && !is_dir($dir)) {
+                    throw new \RuntimeException(sprintf('Directory "%s" was not created', $dir));
+                }
             }
+            $path = $this->dirRoot . $img;
+
+            file_put_contents($path, $response);
+            $mas[] = $img;
             return $mas ?? [];
         }
         Yii::$app->session->setFlash('danger', 'Произошла ошибка скачивания');

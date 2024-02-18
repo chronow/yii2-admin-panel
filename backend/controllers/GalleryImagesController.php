@@ -38,10 +38,22 @@ class GalleryImagesController extends Controller
     {
         $dataProvider = new ActiveDataProvider([
             'query' => GalleryImages::find(),
+            'pagination' => [
+                'pageSize' => 100,
+            ],
         ]);
 
         return $this->render('index', [
             'dataProvider' => $dataProvider,
+        ]);
+    }
+
+    public function actionView()
+    {
+        $gallery = GalleryImages::find()->all();
+
+        return $this->render('view', [
+            'gallery' => $gallery,
         ]);
     }
 

@@ -17,6 +17,7 @@ use yii\widgets\ActiveForm;
 
 $card = ($model->isNewRecord) ? 'card-primary' : 'card-warning';
 $btn = ($model->isNewRecord) ? 'btn-primary' : 'btn-warning';
+$bg = ($model->isNewRecord) ? 'primary' : 'success';
 ?>
 
 <?php $form = ActiveForm::begin(); ?>
@@ -47,14 +48,14 @@ $btn = ($model->isNewRecord) ? 'btn-primary' : 'btn-warning';
             </div>
         </div>
 
-        <div class="info-box text-black bg-warning mt-3 mb-3 fs-7" role="alert">
+        <div class="info-box text-black bg-<?= $bg ?> mt-3 mb-3 fs-7" role="alert">
             <div class="info-box-icon"><i class="fa fa-exclamation"></i></div>
             <div class="info-box-content">
                 <span class="">Важно! Перед загрузкой заранее обрабатывайте и приводите их к нужному виду (размер, вес)</span>
             </div>
         </div>
 
-        <div class="alert alert-success fs-7" role="alert">
+        <div class="alert alert-<?= $bg ?> fs-7" role="alert">
             <span class="glyphicon glyphicon-ok-sign"></span>&nbsp;&nbsp;&nbsp;Идеальные параметры обработанного
             изображения:<br/>
             <ul>

@@ -71,15 +71,15 @@ $this->params['breadcrumbs'][] = $this->title;
                         $badge = '';
                 }
 
-                return '<span class="' . $badge . '">' . $model->getStatus() . '</span>';
+                return '<span class="' . $badge . ' text-black fs-8">' . $model->getStatus() . '</span>';
             },
             'filter' => \common\models\User::$status,
         ],
         //'created_at',
         ['class' => 'yii\grid\ActionColumn',
-            'headerOptions' => ['style' => 'width:75px'],
+            'headerOptions' => ['style' => 'width:60px'],
             'contentOptions' => ['class' => 'text-center'],
-            'template' => '{update} {delete}',
+            'template' => '<div class="justify-flex">{update} {delete}</div>',
         ],
     ],
 ]); ?>

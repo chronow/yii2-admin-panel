@@ -58,9 +58,9 @@ $this->params['breadcrumbs'][] = $this->title;
             },
         ],
         ['class' => 'yii\grid\ActionColumn',
-            'headerOptions' => ['style' => 'width:75px;'],
+            'headerOptions' => ['style' => 'width:60px;'],
             'contentOptions' => ['class' => 'text-center'],
-            'template' => '{update} {delete}',
+            'template' => '<div class="justify-flex">{update} {delete}</div>',
         ],
     ],
 ]); ?>
