@@ -23,13 +23,13 @@ $btn = ($model->isNewRecord) ? 'btn-primary' : 'btn-warning';
             <div class="col-md-12">
                 <div class="card-box">
                     <div class="row">
-                        <div class="col-md-8">
+                        <div class="col-md-8 g-3">
                             <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-4 g-3">
                             <?= $form->field($model, 'byOrder')->textInput() ?>
                         </div>
-                        <div class="col-md-12">
+                        <div class="col-md-12 g-3">
                             <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
                         </div>
                     </div>
@@ -42,10 +42,10 @@ $btn = ($model->isNewRecord) ? 'btn-primary' : 'btn-warning';
                             unset($items[$model->id]);
                         }
                         ?>
-                        <div class="col-md-6">
-                            <?= $form->field($model, 'idParent')->dropDownList($items, ['prompt' => 'Выберите родительскую категорию..'])?>
+                        <div class="col-md-6 g-3">
+                            <?= $form->field($model, 'idParent')->dropDownList($items, ['prompt' => 'Выберите родительскую категорию..', 'class' => 'form-control form-select'])?>
                         </div>
-                        <div class="col-md-6 pt-4 text-center">
+                        <div class="col-md-6 pt-4 g-3 text-center">
                             <?php if ($model->isNewRecord): ?>
                                 <?= $form->field($model, 'isPublic')->checkbox(['checked' => true]) ?>
                             <?php else: ?>

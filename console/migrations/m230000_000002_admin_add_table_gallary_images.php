@@ -3,9 +3,9 @@
 use yii\db\Migration;
 
 /**
- * Class m221005_135212_add_table_gallary_images
+ * Class m230000_000002_admin_add_table_gallary_images
  */
-class m221005_135212_add_table_gallary_images extends Migration
+class m230000_000002_admin_add_table_gallary_images extends Migration
 {
     /**
      * {@inheritdoc}

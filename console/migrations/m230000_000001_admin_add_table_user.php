@@ -2,7 +2,7 @@
 
 use yii\db\Migration;
 
-class m130524_201442_add_table_user extends Migration
+class m230000_000001_admin_add_table_user extends Migration
 {
     public function up()
     {
@@ -40,7 +40,7 @@ class m130524_201442_add_table_user extends Migration
                 'password_hash' => '$2y$13$Wc0Ai6WOCHqetxjo7Rg/9ud1wM1Dcgx4rfxnVlGCEdk3a15XZX.Ke',
                 'password_reset_token' => NULL,
                 'email' => 'web_script@mail.ru',
-                'phone' => '',
+                'phone' => '+7 (978)-77-64-771',
                 'comment' => NULL,
                 'status' => 10,
                 'type' => 10,

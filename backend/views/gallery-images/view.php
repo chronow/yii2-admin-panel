@@ -10,11 +10,10 @@ use backend\models\GalleryImages;
 <?php if (!empty($gallery)): ?>
 <?php foreach ($gallery as $item): ?>
     <?php
-        $img = (!empty($item->resize3)) ? $item->resize3 : '@web/web/img/no.png' ;
+        $img = (!empty($item->resize1)) ? $item->resize1 : '@web/web/img/no.png' ;
         $img = Html::img($img, ['style' => 'max-width:100%', 'loading' => 'lazy', 'class' => 'img-fluid']);
     ?>
-
-    <div class="col-md-4 col-xl-3">
+    <div class="col-xl-6">
         <div class="card product-box">
             <div class="card-body p-2">
                 <div class="float-end position-relative text-center w-100">
@@ -38,7 +37,6 @@ use backend\models\GalleryImages;
             </div>
         </div>
     </div>
-
 <?php endforeach; ?>
 <?php endif; ?>
 </div>

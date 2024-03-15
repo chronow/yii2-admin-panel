@@ -23,19 +23,19 @@ $bg = ($model->isNewRecord) ? 'primary' : 'success';
 <?php $form = ActiveForm::begin(); ?>
 
 <div class="row">
-    <div class="col-lg-3 col-md-5 col-sm-5">
+    <div class="col-lg-3 col-md-5 col-sm-6">
         <div class="card card-outline <?= $card ?>">
             <div class="card-header">
                 <h3 class="card-title float-start pt-1">Главная обложка</h3>
             </div>
             <div class="product-box">
-                <?php if (!empty($mainImage->resize2)): ?>
+                <?php if (!empty($mainImage->original)): ?>
                     <div class="float-end position-relative text-center w-100">
                         <div class="product-action">
                             <?= Html::a('<i class="bi bi-pencil"></i>', ['/gallery-images/update', 'id' => $mainImage->id], ['title' => 'Редактировать', 'target' => '_blank', 'class' => 'btn btn-success btn-sm waves-effect waves-light']); ?>
                             <?= Html::a('<i class="bi bi-x-lg"></i>', ['/gallery-images/delete', 'id' => $mainImage->id], ['title' => 'Удалить', 'class' => 'btn btn-danger btn-sm waves-effect waves-light', 'data-method' => 'post', 'onclick' => "return window.confirm('Вы точно хотите Удалить?');"]); ?>
                         </div>
-                        <?= Html::img($mainImage->resize2, ['class' => 'card-img', 'loading' => 'lazy']) ?>
+                        <?= Html::img($mainImage->original, ['class' => 'card-img', 'loading' => 'lazy']) ?>
                     </div>
                 <?php else: ?>
                     <div class="card-body">
@@ -78,7 +78,7 @@ $bg = ($model->isNewRecord) ? 'primary' : 'success';
         <?= $this->render('/gallery-images/view', compact('mainImage', 'gallery')); ?>
     </div>
 
-    <div class="col-lg-9 col-md-8">
+    <div class="col-lg-9 col-md-7 col-sm-6">
         <div class="card card-outline <?= $card ?>">
             <div class="card-header">
                 <h3 class="card-title float-left float-start mt-1"><?= ($model->isNewRecord) ? 'Добавить запись' :'Редактирование: #' . $model->id ?></h3>

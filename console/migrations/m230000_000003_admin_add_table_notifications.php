@@ -3,9 +3,9 @@
 use yii\db\Migration;
 
 /**
- * Class m221005_135502_add_table_notifications
+ * Class m230000_000003_admin_add_table_notifications
  */
-class m221005_135502_add_table_notifications extends Migration
+class m230000_000003_admin_add_table_notifications extends Migration
 {
     /**
      * {@inheritdoc}
